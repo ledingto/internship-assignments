@@ -1,0 +1,714 @@
+MacBook-Pro-7:~ Lolo$ 
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ cd ~
+MacBook-Pro-7:~ Lolo$ mkdir temp
+MacBook-Pro-7:~ Lolo$ mkdir temp/food
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/apple
+mkdir: temp/food/fruits: No such file or directory
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/apple
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/pear
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/grape
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/grape/green
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/grape/red
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/fruits/grape/purple
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/veggies
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/veggies/carrot
+MacBook-Pro-7:~ Lolo$ mkdir temp/food/veggies/potato
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev/milk
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev/milk/"2%"
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev/milk/1%
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev/milk/fatfree
+MacBook-Pro-7:~ Lolo$ mkdir temp/bev/juice
+MacBook-Pro-7:~ Lolo$ ls
+APCS BlueJ		Library			VirtualBox VMs
+Applications		Movies			a.out
+Code			Music			history.txt
+Desktop			Pictures		run.c
+Documents		Public			runner.xcworkspace
+Downloads		TextEdit		temp
+Dropbox			TextEdits
+MacBook-Pro-7:~ Lolo$ cd temp
+MacBook-Pro-7:temp Lolo$ pwd
+/Users/Lolo/temp
+MacBook-Pro-7:temp Lolo$ cd ..
+MacBook-Pro-7:~ Lolo$ pwd
+/Users/Lolo
+MacBook-Pro-7:~ Lolo$ cd temp/food/fruits/apple
+MacBook-Pro-7:apple Lolo$ cd ../../..
+MacBook-Pro-7:temp Lolo$ pwd
+/Users/Lolo/temp
+MacBook-Pro-7:temp Lolo$ cd ~
+MacBook-Pro-7:~ Lolo$ cd Documents
+MacBook-Pro-7:Documents Lolo$ cd ../Downloads
+MacBook-Pro-7:Downloads Lolo$ cd ..
+MacBook-Pro-7:~ Lolo$ ls
+APCS BlueJ		Library			VirtualBox VMs
+Applications		Movies			a.out
+Code			Music			history.txt
+Desktop			Pictures		run.c
+Documents		Public			runner.xcworkspace
+Downloads		TextEdit		temp
+Dropbox			TextEdits
+MacBook-Pro-7:~ Lolo$ cd Applications
+MacBook-Pro-7:Applications Lolo$ ls
+Chrome Apps.localized
+MacBook-Pro-7:Applications Lolo$ cd ../VirtualBox VMs
+-bash: cd: ../VirtualBox: No such file or directory
+MacBook-Pro-7:Applications Lolo$ cd ../"VirtualBox VMs"
+MacBook-Pro-7:VirtualBox VMs Lolo$ cd ~
+MacBook-Pro-7:~ Lolo$ ls
+APCS BlueJ		Library			VirtualBox VMs
+Applications		Movies			a.out
+Code			Music			history.txt
+Desktop			Pictures		run.c
+Documents		Public			runner.xcworkspace
+Downloads		TextEdit		temp
+Dropbox			TextEdits
+MacBook-Pro-7:~ Lolo$ cd temp
+MacBook-Pro-7:temp Lolo$ ls
+bev	food
+MacBook-Pro-7:temp Lolo$ cd bev
+MacBook-Pro-7:bev Lolo$ ls
+juice	milk
+MacBook-Pro-7:bev Lolo$ cd milk
+MacBook-Pro-7:milk Lolo$ ls
+1%	2%	fatfree
+MacBook-Pro-7:milk Lolo$ cd fatfree
+MacBook-Pro-7:fatfree Lolo$ ls
+MacBook-Pro-7:fatfree Lolo$ pwd
+/Users/Lolo/temp/bev/milk/fatfree
+MacBook-Pro-7:fatfree Lolo$ cd ../../../food
+MacBook-Pro-7:food Lolo$ ls
+fruits	veggies
+MacBook-Pro-7:food Lolo$ cd veggies
+MacBook-Pro-7:veggies Lolo$ ls
+carrot	potato
+MacBook-Pro-7:veggies Lolo$ cd ../..
+MacBook-Pro-7:temp Lolo$ ls -lR
+total 0
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 bev
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 food
+
+./bev:
+total 0
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:02 juice
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:02 milk
+
+./bev/juice:
+
+./bev/milk:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 1%
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 2%
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 fatfree
+
+./bev/milk/1%:
+
+./bev/milk/2%:
+
+./bev/milk/fatfree:
+
+./food:
+total 0
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:01 fruits
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 veggies
+
+./food/fruits:
+total 0
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:01 apple
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:01 grape
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:01 pear
+
+./food/fruits/apple:
+
+./food/fruits/grape:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 green
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 purple
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 red
+
+./food/fruits/grape/green:
+
+./food/fruits/grape/purple:
+
+./food/fruits/grape/red:
+
+./food/fruits/pear:
+
+./food/veggies:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 carrot
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 potato
+
+./food/veggies/carrot:
+
+./food/veggies/potato:
+MacBook-Pro-7:temp Lolo$ cd ..
+MacBook-Pro-7:~ Lolo$ ls
+APCS BlueJ		Library			VirtualBox VMs
+Applications		Movies			a.out
+Code			Music			history.txt
+Desktop			Pictures		run.c
+Documents		Public			runner.xcworkspace
+Downloads		TextEdit		temp
+Dropbox			TextEdits
+MacBook-Pro-7:~ Lolo$ cd Downlaods
+-bash: cd: Downlaods: No such file or directory
+MacBook-Pro-7:~ Lolo$ cd Downloads
+MacBook-Pro-7:Downloads Lolo$ ls -lR
+total 112
+-rw-r--r--@ 1 Lolo  staff  53271 Jun 15 00:29 Edington_Resume.pdf
+drwx------@ 6 Lolo  staff    204 Jun 11 00:41 Intern__paperwork
+
+./Intern__paperwork:
+total 856
+-rwxr-xr-x@ 1 Lolo  staff   61408 Jun 11 07:41 Internship Learning Objectives.docx
+-rwxr-xr-x@ 1 Lolo  staff  117150 Jun 11 07:41 InternshipBlog.docx
+-rwxr-xr-x@ 1 Lolo  staff  150644 Jun 11 07:41 NCIInternshipLearningAgreement.pdf
+-rwxr-xr-x@ 1 Lolo  staff  106097 Jun 11 07:41 W-9 Form.pdf
+MacBook-Pro-7:Downloads Lolo$ ls
+Edington_Resume.pdf	Intern__paperwork
+MacBook-Pro-7:Downloads Lolo$ pwd
+/Users/Lolo/Downloads
+MacBook-Pro-7:Downloads Lolo$ cd ~
+MacBook-Pro-7:~ Lolo$ cd temp
+MacBook-Pro-7:temp Lolo$ rmdir temp
+rmdir: temp: No such file or directory
+MacBook-Pro-7:temp Lolo$ rmdir food
+rmdir: food: Directory not empty
+MacBook-Pro-7:temp Lolo$ cd temp/food/fruits
+-bash: cd: temp/food/fruits: No such file or directory
+MacBook-Pro-7:temp Lolo$ cd temp/food/fruit
+-bash: cd: temp/food/fruit: No such file or directory
+MacBook-Pro-7:temp Lolo$ cd /food/fruits
+-bash: cd: /food/fruits: No such file or directory
+MacBook-Pro-7:temp Lolo$ pwd
+/Users/Lolo/temp
+MacBook-Pro-7:temp Lolo$ ls
+bev	food
+MacBook-Pro-7:temp Lolo$ cd food
+MacBook-Pro-7:food Lolo$ ls
+fruits	veggies
+MacBook-Pro-7:food Lolo$ cd fruits
+MacBook-Pro-7:fruits Lolo$ ls
+apple	grape	pear
+MacBook-Pro-7:fruits Lolo$ mkdir tropical/pineapple/mango/papaya/kiwi/mango
+mkdir: tropical/pineapple/mango/papaya/kiwi: No such file or directory
+MacBook-Pro-7:fruits Lolo$ mkdir tropical/pineapple/mango/papaya/kiwi
+mkdir: tropical/pineapple/mango/papaya: No such file or directory
+MacBook-Pro-7:fruits Lolo$ mkdir tropical
+MacBook-Pro-7:fruits Lolo$ mkdir tropical
+mkdir: tropical: File exists
+MacBook-Pro-7:fruits Lolo$ cd tropical/
+MacBook-Pro-7:tropical Lolo$ mkdir pineapple
+MacBook-Pro-7:tropical Lolo$ cd pineapple/
+MacBook-Pro-7:pineapple Lolo$ mkdir mango
+MacBook-Pro-7:pineapple Lolo$ cd mango
+MacBook-Pro-7:mango Lolo$ mkdir kiwi
+MacBook-Pro-7:mango Lolo$ cd kiwi
+MacBook-Pro-7:kiwi Lolo$ pwd
+/Users/Lolo/temp/food/fruits/tropical/pineapple/mango/kiwi
+MacBook-Pro-7:kiwi Lolo$ cd ..
+MacBook-Pro-7:mango Lolo$ la
+-bash: la: command not found
+MacBook-Pro-7:mango Lolo$ la
+-bash: la: command not found
+MacBook-Pro-7:mango Lolo$ ls
+kiwi
+MacBook-Pro-7:mango Lolo$ rmdir kiwi
+MacBook-Pro-7:mango Lolo$ ls
+MacBook-Pro-7:mango Lolo$ cd ..
+MacBook-Pro-7:pineapple Lolo$ rmdir mango
+MacBook-Pro-7:pineapple Lolo$ cd ..
+MacBook-Pro-7:tropical Lolo$ rmdir pineapple
+MacBook-Pro-7:tropical Lolo$ cd ..
+MacBook-Pro-7:fruits Lolo$ ls
+apple		grape		pear		tropical
+MacBook-Pro-7:fruits Lolo$ rmdir tropical
+MacBook-Pro-7:fruits Lolo$ ls
+apple	grape	pear
+MacBook-Pro-7:fruits Lolo$ pwd
+/Users/Lolo/temp/food/fruits
+MacBook-Pro-7:fruits Lolo$ cd ../..
+MacBook-Pro-7:temp Lolo$ ls -lR
+total 0
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 bev
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 food
+
+./bev:
+total 0
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:02 juice
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:02 milk
+
+./bev/juice:
+
+./bev/milk:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 1%
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 2%
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 fatfree
+
+./bev/milk/1%:
+
+./bev/milk/2%:
+
+./bev/milk/fatfree:
+
+./food:
+total 0
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:19 fruits
+drwxr-xr-x  4 Lolo  staff  136 Jun 20 11:02 veggies
+
+./food/fruits:
+total 0
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:01 apple
+drwxr-xr-x  5 Lolo  staff  170 Jun 20 11:01 grape
+drwxr-xr-x  2 Lolo  staff   68 Jun 20 11:01 pear
+
+./food/fruits/apple:
+
+./food/fruits/grape:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 green
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 purple
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:01 red
+
+./food/fruits/grape/green:
+
+./food/fruits/grape/purple:
+
+./food/fruits/grape/red:
+
+./food/fruits/pear:
+
+./food/veggies:
+total 0
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 carrot
+drwxr-xr-x  2 Lolo  staff  68 Jun 20 11:02 potato
+
+./food/veggies/carrot:
+
+./food/veggies/potato:
+MacBook-Pro-7:temp Lolo$ cd fruits
+-bash: cd: fruits: No such file or directory
+MacBook-Pro-7:temp Lolo$ cd food/fruits
+MacBook-Pro-7:fruits Lolo$ ls
+apple	grape	pear
+MacBook-Pro-7:fruits Lolo$ mkdir -p tropical/pineapple/mango/kiwi
+MacBook-Pro-7:fruits Lolo$ ls
+apple		grape		pear		tropical
+MacBook-Pro-7:fruits Lolo$ cd tropical
+MacBook-Pro-7:tropical Lolo$ ls
+pineapple
+MacBook-Pro-7:tropical Lolo$ cd pineapple/
+MacBook-Pro-7:pineapple Lolo$ ls
+mango
+MacBook-Pro-7:pineapple Lolo$ cd ../../../..
+MacBook-Pro-7:temp Lolo$ ls
+bev	food
+MacBook-Pro-7:temp Lolo$ pushd bev/milk
+~/temp/bev/milk ~/temp
+MacBook-Pro-7:milk Lolo$ pwd
+/Users/Lolo/temp/bev/milk
+MacBook-Pro-7:milk Lolo$ popd
+~/temp
+MacBook-Pro-7:temp Lolo$ pushd
+-bash: pushd: no other directory
+MacBook-Pro-7:temp Lolo$ pushd food/veggies/carrot
+~/temp/food/veggies/carrot ~/temp
+MacBook-Pro-7:carrot Lolo$ pushd bev/juice
+-bash: pushd: bev/juice: No such file or directory
+MacBook-Pro-7:carrot Lolo$ pwd
+/Users/Lolo/temp/food/veggies/carrot
+MacBook-Pro-7:carrot Lolo$ pushd
+~/temp ~/temp/food/veggies/carrot
+MacBook-Pro-7:temp Lolo$ pwd
+/Users/Lolo/temp
+MacBook-Pro-7:temp Lolo$ pushd
+~/temp/food/veggies/carrot ~/temp
+MacBook-Pro-7:carrot Lolo$ pwd
+/Users/Lolo/temp/food/veggies/carrot
+MacBook-Pro-7:carrot Lolo$ pushd ~/temp/bev/milk
+~/temp/bev/milk ~/temp/food/veggies/carrot ~/temp
+MacBook-Pro-7:milk Lolo$ pushd
+~/temp/food/veggies/carrot ~/temp/bev/milk ~/temp
+MacBook-Pro-7:carrot Lolo$ pushd
+~/temp/bev/milk ~/temp/food/veggies/carrot ~/temp
+MacBook-Pro-7:milk Lolo$ pwd
+/Users/Lolo/temp/bev/milk
+MacBook-Pro-7:milk Lolo$ popd
+~/temp/food/veggies/carrot ~/temp
+MacBook-Pro-7:carrot Lolo$ pwd
+/Users/Lolo/temp/food/veggies/carrot
+MacBook-Pro-7:carrot Lolo$ popd
+~/temp
+MacBook-Pro-7:temp Lolo$ popd
+-bash: popd: directory stack empty
+MacBook-Pro-7:temp Lolo$ pwd
+/Users/Lolo/temp
+MacBook-Pro-7:temp Lolo$ cd food/veggies
+MacBook-Pro-7:veggies Lolo$ ls
+carrot	potato
+MacBook-Pro-7:veggies Lolo$ cd potato
+MacBook-Pro-7:potato Lolo$ ls
+MacBook-Pro-7:potato Lolo$ touch nutrients.txt
+MacBook-Pro-7:potato Lolo$ ls
+nutrients.txt
+MacBook-Pro-7:potato Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ rmdir potato
+rmdir: potato: Directory not empty
+MacBook-Pro-7:veggies Lolo$ rm -rf potato
+MacBook-Pro-7:veggies Lolo$ ls
+carrot
+MacBook-Pro-7:veggies Lolo$ mkdir potato
+MacBook-Pro-7:veggies Lolo$ ls
+carrot	potato
+MacBook-Pro-7:veggies Lolo$ cd potato
+MacBook-Pro-7:potato Lolo$ touch nutrients.txt
+MacBook-Pro-7:potato Lolo$ cp nutrients.txt nutrients2.txt
+MacBook-Pro-7:potato Lolo$ ls
+nutrients.txt	nutrients2.txt
+MacBook-Pro-7:potato Lolo$ cp nutrients.txt ../carrot/nutrients_carrot.txt
+MacBook-Pro-7:potato Lolo$ ls
+nutrients.txt	nutrients2.txt
+MacBook-Pro-7:potato Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ cd carrot
+MacBook-Pro-7:carrot Lolo$ ls
+nutrients_carrot.txt
+MacBook-Pro-7:carrot Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ ls
+carrot	potato
+MacBook-Pro-7:veggies Lolo$ cd potato
+MacBook-Pro-7:potato Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ mkdir nutrients_dir
+MacBook-Pro-7:veggies Lolo$ ls
+carrot		nutrients_dir	potato
+MacBook-Pro-7:veggies Lolo$ cd potato
+MacBook-Pro-7:potato Lolo$ cp -r nutrients.txt ../nutrients_dir
+MacBook-Pro-7:potato Lolo$ ls
+nutrients.txt	nutrients2.txt
+MacBook-Pro-7:potato Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ ls
+carrot		nutrients_dir	potato
+MacBook-Pro-7:veggies Lolo$ cd nutrients_dir/
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+nutrients.txt
+MacBook-Pro-7:nutrients_dir Lolo$ cd ../potato
+MacBook-Pro-7:potato Lolo$ cp nutrients2.txt ../nutrients_dir
+MacBook-Pro-7:potato Lolo$ ls
+nutrients.txt	nutrients2.txt
+MacBook-Pro-7:potato Lolo$ cd ../nutrients_dir/
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+nutrients.txt	nutrients2.txt
+MacBook-Pro-7:nutrients_dir Lolo$ cd ../carrot
+MacBook-Pro-7:carrot Lolo$ ls
+nutrients_carrot.txt
+MacBook-Pro-7:carrot Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ touch nutrients_gen.txt
+MacBook-Pro-7:veggies Lolo$ ls
+carrot			nutrients_gen.txt
+nutrients_dir		potato
+MacBook-Pro-7:veggies Lolo$ cp nutrients_gen.txt nutrients_dir
+MacBook-Pro-7:veggies Lolo$ ls
+carrot			nutrients_gen.txt
+nutrients_dir		potato
+MacBook-Pro-7:veggies Lolo$ cd nutrients_dir/
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+nutrients.txt		nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:nutrients_dir Lolo$ pwd
+/Users/Lolo/temp/food/veggies/nutrients_dir
+MacBook-Pro-7:nutrients_dir Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ cp nutrients_dir ..
+cp: nutrients_dir is a directory (not copied).
+MacBook-Pro-7:veggies Lolo$ cp -r nutrients_dir ..
+MacBook-Pro-7:veggies Lolo$ ls
+carrot			nutrients_gen.txt
+nutrients_dir		potato
+MacBook-Pro-7:veggies Lolo$ cd ..
+MacBook-Pro-7:food Lolo$ ls
+fruits		nutrients_dir	veggies
+MacBook-Pro-7:food Lolo$ cd nutrients_dir/
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+nutrients.txt		nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:nutrients_dir Lolo$ cd ..
+MacBook-Pro-7:food Lolo$ cp -r nutrients_dir/ ../all_nutrients
+MacBook-Pro-7:food Lolo$ ls
+fruits		nutrients_dir	veggies
+MacBook-Pro-7:food Lolo$ cd ..
+MacBook-Pro-7:temp Lolo$ ls
+all_nutrients	bev		food
+MacBook-Pro-7:temp Lolo$ cd all_nutrients/
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients.txt		nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:all_nutrients Lolo$ mv nutrients.txt ../food/fruits
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:all_nutrients Lolo$ mv ../food/fruits/nutrients.txt
+usage: mv [-f | -i | -n] [-v] source target
+       mv [-f | -i | -n] [-v] source ... directory
+MacBook-Pro-7:all_nutrients Lolo$ mv ../food/fruits/nutrients.txt ~/temp/all_nutrients
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients.txt		nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:all_nutrients Lolo$ cp nutrients.txt ../../Desktop
+MacBook-Pro-7:all_nutrients Lolo$ mv ../../Desktop/nutrients_real.txt ~/temp/all_nutrients
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients.txt		nutrients_gen.txt
+nutrients2.txt		nutrients_real.txt
+MacBook-Pro-7:all_nutrients Lolo$ less nutrients_real.txt 
+MacBook-Pro-7:all_nutrients Lolo$ pwd
+/Users/Lolo/temp/all_nutrients
+MacBook-Pro-7:all_nutrients Lolo$ cp ../../Desktop/nutrients.txt ../../Desktop/nutrients_fullinfo.txt
+MacBook-Pro-7:all_nutrients Lolo$ cp ../../Desktop/nutrients_fullinfo.txt ~/temp/all_nutrients/
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients.txt		nutrients_fullinfo.txt	nutrients_real.txt
+nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:all_nutrients Lolo$ less nutrients_fullinfo.txt 
+MacBook-Pro-7:all_nutrients Lolo$ cd ~
+MacBook-Pro-7:~ Lolo$ ls
+APCS BlueJ		Library			VirtualBox VMs
+Applications		Movies			a.out
+Code			Music			history.txt
+Desktop			Pictures		run.c
+Documents		Public			runner.xcworkspace
+Downloads		TextEdit		temp
+Dropbox			TextEdits
+MacBook-Pro-7:~ Lolo$ cd temp
+MacBook-Pro-7:temp Lolo$ ls
+all_nutrients	bev		food		test2.txt
+MacBook-Pro-7:temp Lolo$ cat test2.txt
+There are many things I like about New Orleans. One day I hope to return to the mountains of the west.MacBook-Pro-7:temp Lolo$ 
+MacBook-Pro-7:temp Lolo$ less test2.txt 
+MacBook-Pro-7:temp Lolo$ cd all_nutrients/
+MacBook-Pro-7:all_nutrients Lolo$ ls
+nutrients.txt		nutrients_fullinfo.txt	nutrients_real.txt
+nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:all_nutrients Lolo$ cat nutrients_fullinfo.txt 
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!
+Potatoes are very nutritious foods. They come in yellow red and other colors.
+
+Yummy!MacBook-Pro-7:all_nutrients Lolo$ cd ../../Desktop
+MacBook-Pro-7:Desktop Lolo$ ls
+Cool Pics
+Github
+Screen Shot 2016-06-18 at 10.13.13 PM.png
+bambition
+gulf_project
+nutrients.txt
+nutrients_fullinfo.txt
+to do >.<.pages
+MacBook-Pro-7:Desktop Lolo$ rm nutrients.txt
+MacBook-Pro-7:Desktop Lolo$ rm nutrients_fullinfo.txt 
+MacBook-Pro-7:Desktop Lolo$ ls
+Cool Pics
+Github
+Screen Shot 2016-06-18 at 10.13.13 PM.png
+bambition
+gulf_project
+to do >.<.pages
+MacBook-Pro-7:Desktop Lolo$ cd ..
+MacBook-Pro-7:~ Lolo$ cd temp
+MacBook-Pro-7:temp Lolo$ ls
+all_nutrients	bev		food		test2.txt
+MacBook-Pro-7:temp Lolo$ rm -r all_nutrients/
+MacBook-Pro-7:temp Lolo$ ls
+bev		food		test2.txt
+MacBook-Pro-7:temp Lolo$ rm -r bev
+MacBook-Pro-7:temp Lolo$ ls
+food		test2.txt
+MacBook-Pro-7:temp Lolo$ cd food
+MacBook-Pro-7:food Lolo$ ls
+fruits		nutrients_dir	veggies
+MacBook-Pro-7:food Lolo$ rm nutrients_dir/
+rm: nutrients_dir/: is a directory
+MacBook-Pro-7:food Lolo$ rm -r nutrients_dir/
+MacBook-Pro-7:food Lolo$ cd veggies
+MacBook-Pro-7:veggies Lolo$ ls
+carrot			nutrients_gen.txt
+nutrients_dir		potato
+MacBook-Pro-7:veggies Lolo$ rm nutrients_gen.txt 
+MacBook-Pro-7:veggies Lolo$ rmdir nutrients_dir/
+rmdir: nutrients_dir/: Directory not empty
+MacBook-Pro-7:veggies Lolo$ cd nutrients_dir/
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+nutrients.txt		nutrients2.txt		nutrients_gen.txt
+MacBook-Pro-7:nutrients_dir Lolo$ rm nutrients.txt nutrients2.txt nutrients_gen.txt
+MacBook-Pro-7:nutrients_dir Lolo$ ls
+MacBook-Pro-7:nutrients_dir Lolo$ cd ..
+MacBook-Pro-7:veggies Lolo$ rmdir nutrients_dir/
+MacBook-Pro-7:veggies Lolo$ ls
+carrot	potato
+MacBook-Pro-7:veggies Lolo$ cd ../..
+MacBook-Pro-7:temp Lolo$ rm -r food
+MacBook-Pro-7:temp Lolo$ rm -r bev
+rm: bev: No such file or directory
+MacBook-Pro-7:temp Lolo$ ls
+test2.txt
+MacBook-Pro-7:temp Lolo$ rm test2.txt 
+MacBook-Pro-7:temp Lolo$ help
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin15)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ JOB_SPEC [&]                       (( expression ))
+ . filename [arguments]             :
+ [ arg... ]                         [[ expression ]]
+ alias [-p] [name[=value] ... ]     bg [job_spec ...]
+ bind [-lpvsPVS] [-m keymap] [-f fi break [n]
+ builtin [shell-builtin [arg ...]]  caller [EXPR]
+ case WORD in [PATTERN [| PATTERN]. cd [-L|-P] [dir]
+ command [-pVv] command [arg ...]   compgen [-abcdefgjksuv] [-o option
+ complete [-abcdefgjksuv] [-pr] [-o continue [n]
+ declare [-afFirtx] [-p] [name[=val dirs [-clpv] [+N] [-N]
+ disown [-h] [-ar] [jobspec ...]    echo [-neE] [arg ...]
+ enable [-pnds] [-a] [-f filename]  eval [arg ...]
+ exec [-cl] [-a name] file [redirec exit [n]
+ export [-nf] [name[=value] ...] or false
+ fc [-e ename] [-nlr] [first] [last fg [job_spec]
+ for NAME [in WORDS ... ;] do COMMA for (( exp1; exp2; exp3 )); do COM
+ function NAME { COMMANDS ; } or NA getopts optstring name [arg]
+ hash [-lr] [-p pathname] [-dt] [na help [-s] [pattern ...]
+ history [-c] [-d offset] [n] or hi if COMMANDS; then COMMANDS; [ elif
+ jobs [-lnprs] [jobspec ...] or job kill [-s sigspec | -n signum | -si
+ let arg [arg ...]                  local name[=value] ...
+ logout                             popd [+N | -N] [-n]
+ printf [-v var] format [arguments] pushd [dir | +N | -N] [-n]
+ pwd [-LP]                          read [-ers] [-u fd] [-t timeout] [
+ readonly [-af] [name[=value] ...]  return [n]
+ select NAME [in WORDS ... ;] do CO set [--abefhkmnptuvxBCHP] [-o opti
+ shift [n]                          shopt [-pqsu] [-o long-option] opt
+ source filename [arguments]        suspend [-f]
+ test [expr]                        time [-p] PIPELINE
+ times                              trap [-lp] [arg signal_spec ...]
+ true                               type [-afptP] name [name ...]
+ typeset [-afFirtx] [-p] name[=valu ulimit [-SHacdfilmnpqstuvx] [limit
+ umask [-p] [-S] [mode]             unalias [-a] name [name ...]
+ unset [-f] [-v] [name ...]         until COMMANDS; do COMMANDS; done
+ variables - Some variable names an wait [n]
+ while COMMANDS; do COMMANDS; done  { COMMANDS ; }
+MacBook-Pro-7:temp Lolo$ help xargs
+-bash: help: no help topics match `xargs'.  Try `help help' or `man -k xargs' or `info xargs'.
+MacBook-Pro-7:temp Lolo$ help true
+true: true
+    Return a successful result.
+MacBook-Pro-7:temp Lolo$ help sudo
+-bash: help: no help topics match `sudo'.  Try `help help' or `man -k sudo' or `info sudo'.
+MacBook-Pro-7:temp Lolo$ help help
+help: help [-s] [pattern ...]
+    Display helpful information about builtin commands.  If PATTERN is
+    specified, gives detailed help on all commands matching PATTERN,
+    otherwise a list of the builtins is printed.  The -s option
+    restricts the output for each builtin command matching PATTERN to
+    a short usage synopsis.
+MacBook-Pro-7:temp Lolo$ man -k xargs
+xargs(1)                 - construct argument list(s) and execute utility
+MacBook-Pro-7:temp Lolo$ man -k sudo
+sudo(8), sudoedit(8)     - execute a command as another user
+sudoers(5)               - list of which users may execute what
+visudo(8)                - edit the sudoers file
+MacBook-Pro-7:temp Lolo$ man -k chmod
+chmod(1)                 - change file modes or Access Control Lists
+MacBook-Pro-7:temp Lolo$ man -k chown
+chown(8)                 - change file owner and group
+MacBook-Pro-7:temp Lolo$ exit
+logout
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+Deleting expired sessions...none found.
+
+[Process completed]
+
