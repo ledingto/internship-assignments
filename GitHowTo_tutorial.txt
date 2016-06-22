@@ -1,0 +1,1689 @@
+Last login: Wed Jun 22 13:47:25 on ttys000
+MacBook-Pro-7:~ Lolo$ cd Desktop/git_tutorial/
+MacBook-Pro-7:git_tutorial Lolo$ ls
+files	work
+MacBook-Pro-7:git_tutorial Lolo$ mkdir hello
+MacBook-Pro-7:git_tutorial Lolo$ cd hello/
+MacBook-Pro-7:hello Lolo$ touch hello.html
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git init
+Initialized empty Git repository in /Users/Lolo/Desktop/git_tutorial/hello/.git/
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+fatal: LF would be replaced by CRLF in hello.html
+MacBook-Pro-7:hello Lolo$ open ~/.gitconfig
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git commit -m "First Commit"
+[master (root-commit) 3df9309] First Commit
+ 1 file changed, 16 insertions(+)
+ create mode 100644 hello.html
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git stattus
+git: 'stattus' is not a git command. See 'git --help'.
+
+Did you mean this?
+	status
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git commit
+[master c7d830b] Added h1 tag
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git commit -m "Added standard HTML page tags"
+[master 1bab465] Added standard HTML page tags
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git commit -m "Added HTML header"
+[master 480f655] Added HTML header
+ 1 file changed, 2 insertions(+)
+MacBook-Pro-7:hello Lolo$ git log
+commit 480f655d9fae58a85ecb20b7e11b0a7b0712c4fb
+Author: ledingto <edington.laura@gmail.com>
+Date:   Wed Jun 22 14:04:02 2016 -0500
+
+    Added HTML header
+
+commit 1bab4655d695331ed4df167bcc12d62983a6636b
+Author: ledingto <edington.laura@gmail.com>
+Date:   Wed Jun 22 14:03:15 2016 -0500
+
+    Added standard HTML page tags
+
+commit c7d830b0ba89b662c9af072887ec559db41ed549
+Author: ledingto <edington.laura@gmail.com>
+Date:   Wed Jun 22 14:00:36 2016 -0500
+
+    Added h1 tag
+
+commit 3df9309897382a543641fccd9172a49853fe9ea1
+Author: ledingto <edington.laura@gmail.com>
+Date:   Wed Jun 22 13:59:11 2016 -0500
+
+    First Commit
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb Added HTML header
+1bab4655d695331ed4df167bcc12d62983a6636b Added standard HTML page tags
+c7d830b0ba89b662c9af072887ec559db41ed549 Added h1 tag
+3df9309897382a543641fccd9172a49853fe9ea1 First Commit
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline --max-count=2
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb Added HTML header
+1bab4655d695331ed4df167bcc12d62983a6636b Added standard HTML page tags
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline --since='5 minutes ago'
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb Added HTML header
+1bab4655d695331ed4df167bcc12d62983a6636b Added standard HTML page tags
+c7d830b0ba89b662c9af072887ec559db41ed549 Added h1 tag
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline --until='5 minutes ago'
+3df9309897382a543641fccd9172a49853fe9ea1 First Commit
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline --author=ledingto
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb Added HTML header
+1bab4655d695331ed4df167bcc12d62983a6636b Added standard HTML page tags
+c7d830b0ba89b662c9af072887ec559db41ed549 Added h1 tag
+3df9309897382a543641fccd9172a49853fe9ea1 First Commit
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=oneline --all
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb Added HTML header
+1bab4655d695331ed4df167bcc12d62983a6636b Added standard HTML page tags
+c7d830b0ba89b662c9af072887ec559db41ed549 Added h1 tag
+3df9309897382a543641fccd9172a49853fe9ea1 First Commit
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
+480f655 Wed Jun 22 14:04:02 2016 -0500 Added HTML header (ledingto)
+1bab465 Wed Jun 22 14:03:15 2016 -0500 Added standard HTML page tags (ledingto)
+c7d830b Wed Jun 22 14:00:36 2016 -0500 Added h1 tag (ledingto)
+3df9309 Wed Jun 22 13:59:11 2016 -0500 First Commit (ledingto)
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ open .git
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git hist
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open ~.gitconfig
+The file /Users/Lolo/Desktop/git_tutorial/hello/~.gitconfig does not exist.
+MacBook-Pro-7:hello Lolo$ open ~/.gitconfig
+MacBook-Pro-7:hello Lolo$ open .git
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git checkout 3df9
+Note: checking out '3df9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 3df9309... First Commit
+MacBook-Pro-7:hello Lolo$ cat hello.html 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Hello, World</p>
+</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git checkout master
+Previous HEAD position was 3df9309... First Commit
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ cat hello.html
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s2 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;body&gt;</p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h1&gt;</span><span class="s2">Hello, World&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-tab-span">	</span>&lt;/body&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git tag v1
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git hist
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co v1^
+Note: checking out 'v1^'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 1bab465... Added standard HTML page tags
+MacBook-Pro-7:hello Lolo$ cat hello.html
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s2 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;body&gt;</p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h1&gt;</span><span class="s2">Hello, World&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-tab-span">	</span>&lt;/body&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git tag v1-beta
+MacBook-Pro-7:hello Lolo$ git co v1
+Previous HEAD position was 1bab465... Added standard HTML page tags
+HEAD is now at 480f655... Added HTML header
+MacBook-Pro-7:hello Lolo$ git co v1-beta
+Previous HEAD position was 480f655... Added HTML header
+HEAD is now at 1bab465... Added standard HTML page tags
+MacBook-Pro-7:hello Lolo$ git tag
+v1
+v1-beta
+MacBook-Pro-7:hello Lolo$ git hist master --all
+* 480f655 2016-06-22 | Added HTML header (tag: v1, master) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (HEAD, tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+Previous HEAD position was 1bab465... Added standard HTML page tags
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ git hist
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git hist master --all
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git co hello.html 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ cat hello.html 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s2 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;body&gt;</p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h1&gt;</span><span class="s2">Hello, World&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-tab-span">	</span>&lt;/body&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git reset HEAD hello.html 
+Unstaged changes after reset:
+M	hello.html
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git co hello.html 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git commmit -m "Oops, we didn't want this commit"
+git: 'commmit' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit
+MacBook-Pro-7:hello Lolo$ git commit -m "Oops, we didn't want this commit"
+[master f10ec59] Oops, we didn't want this commit
+ 1 file changed, 25 insertions(+), 26 deletions(-)
+ rewrite hello.html (62%)
+MacBook-Pro-7:hello Lolo$ git hist
+* f10ec59 2016-06-22 | Oops, we didn't want this commit (HEAD -> master) [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git revert HEAD
+[master 577a578] Revert "Oops, we didn't want this commit"
+ 1 file changed, 26 insertions(+), 25 deletions(-)
+ rewrite hello.html (65%)
+MacBook-Pro-7:hello Lolo$ hist
+-bash: hist: command not found
+MacBook-Pro-7:hello Lolo$ git hist
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" (HEAD -> master) [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git commit -m "unwanted comment"
+[master 6b280c9] unwanted comment
+ 1 file changed, 25 insertions(+), 26 deletions(-)
+ rewrite hello.html (62%)
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git commit -m "added comment we want to keep"
+[master 75b2ef4] added comment we want to keep
+ 1 file changed, 1 insertion(+)
+MacBook-Pro-7:hello Lolo$ git hist
+* 75b2ef4 2016-06-22 | added comment we want to keep (HEAD -> master) [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git revert 6b280
+error: could not revert 6b280c9... unwanted comment
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+MacBook-Pro-7:hello Lolo$ git checkout 6b280
+hello.html: needs merge
+error: you need to resolve your current index first
+MacBook-Pro-7:hello Lolo$ git revert HEAD
+error: revert is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+You are currently reverting commit 6b280c9.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git branch
+* master
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+You are currently reverting commit 6b280c9.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git commit -m "apparently a merge conflict? must commit...?"
+[master a1bfa75] apparently a merge conflict? must commit...?
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git hist
+* a1bfa75 2016-06-22 | apparently a merge conflict? must commit...? (HEAD -> master) [ledingto]
+* 75b2ef4 2016-06-22 | added comment we want to keep [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git revert HEAD
+[master d7bceb8] Revert "apparently a merge conflict? must commit...?"
+ 1 file changed, 2 insertions(+), 14 deletions(-)
+MacBook-Pro-7:hello Lolo$ git hist
+* d7bceb8 2016-06-22 | Revert "apparently a merge conflict? must commit...?" (HEAD -> master) [ledingto]
+* a1bfa75 2016-06-22 | apparently a merge conflict? must commit...? [ledingto]
+* 75b2ef4 2016-06-22 | added comment we want to keep [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git revert HEAD
+[master 6565a79] Revert "Revert "apparently a merge conflict? must commit...?""
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+MacBook-Pro-7:hello Lolo$ git hist
+* 6565a79 2016-06-22 | Revert "Revert "apparently a merge conflict? must commit...?"" (HEAD -> master) [ledingto]
+* d7bceb8 2016-06-22 | Revert "apparently a merge conflict? must commit...?" [ledingto]
+* a1bfa75 2016-06-22 | apparently a merge conflict? must commit...? [ledingto]
+* 75b2ef4 2016-06-22 | added comment we want to keep [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git tag oops 577a5
+MacBook-Pro-7:hello Lolo$ git hist
+* 6565a79 2016-06-22 | Revert "Revert "apparently a merge conflict? must commit...?"" (HEAD -> master) [ledingto]
+* d7bceb8 2016-06-22 | Revert "apparently a merge conflict? must commit...?" [ledingto]
+* a1bfa75 2016-06-22 | apparently a merge conflict? must commit...? [ledingto]
+* 75b2ef4 2016-06-22 | added comment we want to keep [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" (tag: oops) [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git reset --hard v1
+HEAD is now at 480f655 Added HTML header
+MacBook-Pro-7:hello Lolo$ git hist
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git hist --all
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" (tag: oops) [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git hist 6565a
+* 6565a79 2016-06-22 | Revert "Revert "apparently a merge conflict? must commit...?"" [ledingto]
+* d7bceb8 2016-06-22 | Revert "apparently a merge conflict? must commit...?" [ledingto]
+* a1bfa75 2016-06-22 | apparently a merge conflict? must commit...? [ledingto]
+* 75b2ef4 2016-06-22 | added comment we want to keep [ledingto]
+* 6b280c9 2016-06-22 | unwanted comment [ledingto]
+* 577a578 2016-06-22 | Revert "Oops, we didn't want this commit" (tag: oops) [ledingto]
+* f10ec59 2016-06-22 | Oops, we didn't want this commit [ledingto]
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ 
+MacBook-Pro-7:hello Lolo$ git tag -d oops
+Deleted tag 'oops' (was 577a578)
+MacBook-Pro-7:hello Lolo$ git hist --all
+* 480f655 2016-06-22 | Added HTML header (HEAD -> master, tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git commit -m "Add an author comment"
+[master 4665094] Add an author comment
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+MacBook-Pro-7:hello Lolo$ git add hello.html 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.html
+
+MacBook-Pro-7:hello Lolo$ git ci --amend -m "Add an author/email comment"
+[master 5317199] Add an author/email comment
+ Date: Wed Jun 22 15:42:16 2016 -0500
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+MacBook-Pro-7:hello Lolo$ git hsit
+git: 'hsit' is not a git command. See 'git --help'.
+
+Did you mean this?
+	hist
+MacBook-Pro-7:hello Lolo$ git hist
+* 5317199 2016-06-22 | Add an author/email comment (HEAD -> master) [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ ls
+hello.html
+MacBook-Pro-7:hello Lolo$ mkdir lib
+MacBook-Pro-7:hello Lolo$ mv hello.html lib/
+MacBook-Pro-7:hello Lolo$ ls
+lib
+MacBook-Pro-7:hello Lolo$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	lib/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ cd lib
+MacBook-Pro-7:lib Lolo$ ls
+hello.html
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    ../hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	./
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:lib Lolo$ mv hello.html ../
+MacBook-Pro-7:lib Lolo$ ls
+MacBook-Pro-7:lib Lolo$ cd ..
+MacBook-Pro-7:hello Lolo$ ls
+hello.html	lib
+MacBook-Pro-7:hello Lolo$ git mv hello.html lib
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    hello.html -> lib/hello.html
+
+MacBook-Pro-7:hello Lolo$ git ci -m "Moved hello.html to lib"
+[master d0ac072] Moved hello.html to lib
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename hello.html => lib/hello.html (100%)
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ touch index.html
+MacBook-Pro-7:hello Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ pwd
+/Users/Lolo/Desktop/git_tutorial/hello
+MacBook-Pro-7:hello Lolo$ ls
+index.html	lib
+MacBook-Pro-7:hello Lolo$ git add index.html
+MacBook-Pro-7:hello Lolo$ git commit -m "Added index.html"
+[master 3c5782d] Added index.html
+ 1 file changed, 21 insertions(+)
+ create mode 100644 index.html
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ open index.html 
+MacBook-Pro-7:hello Lolo$ git mv index.html lib
+MacBook-Pro-7:hello Lolo$ ls
+lib
+MacBook-Pro-7:hello Lolo$ cd lib
+MacBook-Pro-7:lib Lolo$ ls
+hello.html	index.html
+MacBook-Pro-7:lib Lolo$ git hist index.html 
+MacBook-Pro-7:lib Lolo$ git hist hello.html 
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    ../index.html -> index.html
+
+MacBook-Pro-7:lib Lolo$ git commit -m "Moved index.html from hello repo to lib"
+[master 640d288] Moved index.html from hello repo to lib
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename index.html => lib/index.html (100%)
+MacBook-Pro-7:lib Lolo$ git hist
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib (HEAD -> master) [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:lib Lolo$ git add .
+MacBook-Pro-7:lib Lolo$ git commit -m "Edit source path in index.html to debug"
+[master 08c53dd] Edit source path in index.html to debug
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open hello.html 
+MacBook-Pro-7:lib Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:lib Lolo$ cat index.html 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;iframe src=“~/Desktop/git_tutorial/hello/lib/hello.html” width=“200” height=“200” /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open hello.html -a Text Edit
+The file /Users/Lolo/Desktop/git_tutorial/hello/lib/Edit does not exist.
+MacBook-Pro-7:lib Lolo$ open hello.html -a TextEdit
+MacBook-Pro-7:lib Lolo$ open hello.html
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ cd ..
+MacBook-Pro-7:hello Lolo$ git mv lib/index.html ~/Desktop/git_tutorial/hello/
+MacBook-Pro-7:hello Lolo$ ls
+index.html	lib
+MacBook-Pro-7:hello Lolo$ open index.html 
+MacBook-Pro-7:hello Lolo$ cd lib/
+MacBook-Pro-7:lib Lolo$ git mv ~/Desktop/git_tutorial/hello/index.html ../lib
+MacBook-Pro-7:lib Lolo$ ls
+hello.html	index.html
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.html
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:lib Lolo$ git add .
+MacBook-Pro-7:lib Lolo$ git commit -m "Fixed RTF from TextEdit that was messing up the html --> now plain text"
+[master cec4f94] Fixed RTF from TextEdit that was messing up the html --> now plain text
+ 2 files changed, 15 insertions(+), 48 deletions(-)
+ rewrite lib/hello.html (98%)
+ rewrite lib/index.html (98%)
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:lib Lolo$ cd ..
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ cd l
+-bash: cd: l: No such file or directory
+MacBook-Pro-7:hello Lolo$ cd lib/
+MacBook-Pro-7:lib Lolo$ open index.html 
+MacBook-Pro-7:lib Lolo$ open hello.html 
+MacBook-Pro-7:lib Lolo$ ls -C .git
+ls: .git: No such file or directory
+MacBook-Pro-7:lib Lolo$ cd ..
+MacBook-Pro-7:hello Lolo$ ls -C .git
+COMMIT_EDITMSG	branches	hooks		logs
+HEAD		config		index		objects
+ORIG_HEAD	description	info		refs
+MacBook-Pro-7:hello Lolo$ ls -C .git/objects
+08	32	3c	4a	60	6d	80	be	d0	f1
+0d	35	3d	4b	64	6e	8a	c1	d1	info
+15	38	40	53	65	71	9f	c7	d7	pack
+18	39	46	55	66	75	a1	cc	e0
+1b	3b	48	57	6b	78	ba	ce	ee
+MacBook-Pro-7:hello Lolo$ ls -C .git/objects/60
+55ea6d618bb1530acf3d596f02945c47973d24
+MacBook-Pro-7:hello Lolo$ ls -C .git/objects/08
+c53dd1594d849b3e3d04f13ed4def2a825edec
+MacBook-Pro-7:hello Lolo$ ls -C .git/objects/ba
+809a1e100b9f82a6785f9b9c996414f6817608
+MacBook-Pro-7:hello Lolo$ ls -C .git/objects/f1
+0ec5927a6dbf9659126861c42b39e01b35ddc3
+MacBook-Pro-7:hello Lolo$ ls .git
+COMMIT_EDITMSG	branches	hooks		logs
+HEAD		config		index		objects
+ORIG_HEAD	description	info		refs
+MacBook-Pro-7:hello Lolo$ cat .git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+
+MacBook-Pro-7:hello Lolo$ ls .git/refs
+heads	tags
+MacBook-Pro-7:hello Lolo$ ls .git/refs/heads
+master
+MacBook-Pro-7:hello Lolo$ ls .git/refs/tags
+v1	v1-beta
+MacBook-Pro-7:hello Lolo$ ls .git/refs/tags/v1
+.git/refs/tags/v1
+MacBook-Pro-7:hello Lolo$ cat .git/refs/tags/v1
+480f655d9fae58a85ecb20b7e11b0a7b0712c4fb
+MacBook-Pro-7:hello Lolo$ cat .git/HEAD
+ref: refs/heads/master
+MacBook-Pro-7:hello Lolo$ git hist --max-count=1
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text (HEAD -> master) [ledingto]
+MacBook-Pro-7:hello Lolo$ git cat-file -t cec4f
+commit
+MacBook-Pro-7:hello Lolo$ git cat-file -p cec4f
+tree 4aa6d0e76b874a8d24899e0ead073442ed1c022c
+parent 08c53dd1594d849b3e3d04f13ed4def2a825edec
+author ledingto <edington.laura@gmail.com> 1466629683 -0500
+committer ledingto <edington.laura@gmail.com> 1466629683 -0500
+
+Fixed RTF from TextEdit that was messing up the html --> now plain text
+MacBook-Pro-7:hello Lolo$ git dump 4aa6d
+040000 tree 0d97343382db501d58b46f4963737990f3cd09f7	lib
+MacBook-Pro-7:hello Lolo$ git mv lib/index.html 
+usage: git mv [<options>] <source>... <destination>
+
+    -v, --verbose         be verbose
+    -n, --dry-run         dry run
+    -f, --force           force move/rename even if target exists
+    -k                    skip move/rename errors
+
+MacBook-Pro-7:hello Lolo$ git mv lib/index.html ~/Desktop/git_tutorial/hello/
+MacBook-Pro-7:hello Lolo$ ls
+index.html	lib
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    lib/index.html -> index.html
+
+MacBook-Pro-7:hello Lolo$ git commit -m "Moved index.html file to hello repo"
+[master 91c08ad] Moved index.html file to hello repo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename lib/index.html => index.html (100%)
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ cd lib/
+MacBook-Pro-7:lib Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:lib Lolo$ cd ..
+MacBook-Pro-7:hello Lolo$ git hist --max-count=1
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo (HEAD -> master) [ledingto]
+MacBook-Pro-7:hello Lolo$ git dump 91c08
+tree 29c7b13a81390dfec1b4e8ac90b96bb647cd9628
+parent cec4f94e0a54c40476a4b2ea0b36b46f08abd0cb
+author ledingto <edington.laura@gmail.com> 1466630402 -0500
+committer ledingto <edington.laura@gmail.com> 1466630402 -0500
+
+Moved index.html file to hello repo
+MacBook-Pro-7:hello Lolo$ git dump 29c7
+100644 blob ce5ddeda7a62f93eae2c5f22169d8eb8f81f44ea	index.html
+040000 tree af8c4c0dee975095628c3faa81cf145c66ceb95c	lib
+MacBook-Pro-7:hello Lolo$ git dump 04000
+fatal: Not a valid object name 04000
+MacBook-Pro-7:hello Lolo$ git dump 040000
+fatal: Not a valid object name 040000
+MacBook-Pro-7:hello Lolo$ git dump 100644
+fatal: Not a valid object name 100644
+MacBook-Pro-7:hello Lolo$ git dump af8c4
+100644 blob 8a166a071d2200fdecad14f4cf0e3e09e6bdf6dc	hello.html
+MacBook-Pro-7:hello Lolo$ git dump 8a166
+<!— Author: Laura Edington (edington.laura@gmail.com) —>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Hello, World!</h1>
+	</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git type 8a166
+blob
+MacBook-Pro-7:hello Lolo$ git type af8c4
+tree
+MacBook-Pro-7:hello Lolo$ git hist
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo (HEAD -> master) [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git type 08c53
+commit
+MacBook-Pro-7:hello Lolo$ git dump 3df93
+tree 1568c3172fb61fc338417819f6bed794a9998be3
+author ledingto <edington.laura@gmail.com> 1466621951 -0500
+committer ledingto <edington.laura@gmail.com> 1466621951 -0500
+
+First Commit
+MacBook-Pro-7:hello Lolo$ git dump 1568c
+100644 blob 6d4abe34479107448f4a0871df65adcb06e060e8	hello.html
+MacBook-Pro-7:hello Lolo$ git dump 6d4
+fatal: Not a valid object name 6d4
+MacBook-Pro-7:hello Lolo$ git dump 6d4ab
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Hello, World</p>
+</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git checkout -b style
+Switched to a new branch 'style'
+MacBook-Pro-7:hello Lolo$ git branch
+  master
+* style
+MacBook-Pro-7:hello Lolo$ git status
+On branch style
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ touch lib/style.css
+MacBook-Pro-7:hello Lolo$ ls lib
+hello.html	style.css
+MacBook-Pro-7:hello Lolo$ open lib/style.css -a TextEdit
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	lib/style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   lib/style.css
+
+MacBook-Pro-7:hello Lolo$ git commit -m "Added css stylesheet"
+[style 9ca2d7e] Added css stylesheet
+ 1 file changed, 3 insertions(+)
+ create mode 100644 lib/style.css
+MacBook-Pro-7:hello Lolo$ open lib/hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git commit -m "Hello uses style.css"
+[style 532e9fd] Hello uses style.css
+ 1 file changed, 1 insertion(+)
+MacBook-Pro-7:hello Lolo$ open lib/index.html -a TextEdit
+The file /Users/Lolo/Desktop/git_tutorial/hello/lib/index.html does not exist.
+MacBook-Pro-7:hello Lolo$ open index.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git ci -m "Updated index.html to include style.css"
+[style 2f9991f] Updated index.html to include style.css
+ 1 file changed, 1 insertion(+)
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git hist --al
+fatal: unrecognized argument: --al
+MacBook-Pro-7:hello Lolo$ git hist --all
+* 2f9991f 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+* 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo (master) [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ cat lib/hello.html 
+<!— Author: Laura Edington (edington.laura@gmail.com) —>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Hello, World!</h1>
+	</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ cat lib/hello.html 
+<!— Author: Laura Edington (edington.laura@gmail.com) —>
+<html>
+	<head>
+		<link type=“text/css” rel=“stylesheet” media=“all” href=“style.css” />
+	</head>
+	<body>
+		<h1>Hello, World!</h1>
+	</body>
+</html>
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ touch README.txt
+MacBook-Pro-7:hello Lolo$ open README.txt
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git commit -m "Added README"
+[master 2861347] Added README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.txt
+MacBook-Pro-7:hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:hello Lolo$ git hist --all
+* 2861347 2016-06-22 | Added README (HEAD -> master) [ledingto]
+| * 2f9991f 2016-06-22 | Updated index.html to include style.css (style) [ledingto]
+| * 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+| * 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git merge master
+Merge made by the 'recursive' strategy.
+ README.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.txt
+MacBook-Pro-7:hello Lolo$ git hist --all
+*   d66facb 2016-06-22 | Merge branch 'master' into style (HEAD -> style) [ledingto]
+|\  
+| * 2861347 2016-06-22 | Added README (master) [ledingto]
+* | 2f9991f 2016-06-22 | Updated index.html to include style.css [ledingto]
+* | 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* | 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ git hist --all
+*   d66facb 2016-06-22 | Merge branch 'master' into style (style) [ledingto]
+|\  
+| * 2861347 2016-06-22 | Added README (HEAD -> master) [ledingto]
+* | 2f9991f 2016-06-22 | Updated index.html to include style.css [ledingto]
+* | 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* | 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ open lib/hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lib/hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git commit -m "Life is great!"
+-bash: !": event not found
+MacBook-Pro-7:hello Lolo$ git ci -m 'Life is great!'
+[master a495093] Life is great!
+ 1 file changed, 1 insertion(+)
+MacBook-Pro-7:hello Lolo$ git hist --all
+* a495093 2016-06-22 | Life is great! (HEAD -> master) [ledingto]
+| *   d66facb 2016-06-22 | Merge branch 'master' into style (style) [ledingto]
+| |\  
+| |/  
+|/|   
+* | 2861347 2016-06-22 | Added README [ledingto]
+| * 2f9991f 2016-06-22 | Updated index.html to include style.css [ledingto]
+| * 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+| * 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git merge master
+Auto-merging lib/hello.html
+CONFLICT (content): Merge conflict in lib/hello.html
+Automatic merge failed; fix conflicts and then commit the result.
+MacBook-Pro-7:hello Lolo$ open lib/hello.html -a TextEdit
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   lib/hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add lib/hello.html 
+MacBook-Pro-7:hello Lolo$ git ci -m "merged master fixed conflict"
+[style 2b4b40d] merged master fixed conflict
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git hist --all
+*   2b4b40d 2016-06-22 | merged master fixed conflict (HEAD -> style) [ledingto]
+|\  
+| * a495093 2016-06-22 | Life is great! (master) [ledingto]
+* |   d66facb 2016-06-22 | Merge branch 'master' into style [ledingto]
+|\ \  
+| |/  
+| * 2861347 2016-06-22 | Added README [ledingto]
+* | 2f9991f 2016-06-22 | Updated index.html to include style.css [ledingto]
+* | 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* | 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ open lib/hello.html 
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ open lib/hello.html 
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git hist
+*   2b4b40d 2016-06-22 | merged master fixed conflict (HEAD -> style) [ledingto]
+|\  
+| * a495093 2016-06-22 | Life is great! (master) [ledingto]
+* |   d66facb 2016-06-22 | Merge branch 'master' into style [ledingto]
+|\ \  
+| |/  
+| * 2861347 2016-06-22 | Added README [ledingto]
+* | 2f9991f 2016-06-22 | Updated index.html to include style.css [ledingto]
+* | 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* | 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git reset 2f999
+Unstaged changes after reset:
+M	lib/hello.html
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   lib/hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git his
+git: 'his' is not a git command. See 'git --help'.
+
+Did you mean this?
+	hist
+MacBook-Pro-7:hello Lolo$ y
+-bash: y: command not found
+MacBook-Pro-7:hello Lolo$ git hist
+* 2f9991f 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+* 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git reset --hard 2f999
+HEAD is now at 2f9991f Updated index.html to include style.css
+MacBook-Pro-7:hello Lolo$ git st
+On branch style
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-7:hello Lolo$ git hist --all
+* a495093 2016-06-22 | Life is great! (master) [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+| * 2f9991f 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+| * 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+| * 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+error: The following untracked working tree files would be overwritten by checkout:
+	README.txt
+Please move or remove them before you can switch branches.
+Aborting
+MacBook-Pro-7:hello Lolo$ git branch
+  master
+* style
+MacBook-Pro-7:hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:hello Lolo$ rm README.txt
+MacBook-Pro-7:hello Lolo$ ls
+index.html	lib
+MacBook-Pro-7:hello Lolo$ git hist
+* 2f9991f 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+* 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+* 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git hist --all
+* a495093 2016-06-22 | Life is great! (master) [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+| * 2f9991f 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+| * 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+| * 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ git hist
+* a495093 2016-06-22 | Life is great! (HEAD -> master) [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:hello Lolo$ git reset --hard 28613
+HEAD is now at 2861347 Added README
+MacBook-Pro-7:hello Lolo$ git hist --all
+* 2861347 2016-06-22 | Added README (HEAD -> master) [ledingto]
+| * 2f9991f 2016-06-22 | Updated index.html to include style.css (style) [ledingto]
+| * 532e9fd 2016-06-22 | Hello uses style.css [ledingto]
+| * 9ca2d7e 2016-06-22 | Added css stylesheet [ledingto]
+|/  
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: Added css stylesheet
+Applying: Hello uses style.css
+Applying: Updated index.html to include style.css
+MacBook-Pro-7:hello Lolo$ git hist
+* af91228 2016-06-22 | Updated index.html to include style.css (HEAD -> style) [ledingto]
+* 779412c 2016-06-22 | Hello uses style.css [ledingto]
+* 8cf6c30 2016-06-22 | Added css stylesheet [ledingto]
+* 2861347 2016-06-22 | Added README (master) [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ git hist
+* 2861347 2016-06-22 | Added README (HEAD -> master) [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ git co style
+Switched to branch 'style'
+MacBook-Pro-7:hello Lolo$ git co master
+Switched to branch 'master'
+MacBook-Pro-7:hello Lolo$ git merge style
+Updating 2861347..af91228
+Fast-forward
+ index.html     | 1 +
+ lib/hello.html | 1 +
+ lib/style.css  | 3 +++
+ 3 files changed, 5 insertions(+)
+ create mode 100644 lib/style.css
+MacBook-Pro-7:hello Lolo$ git hist
+* af91228 2016-06-22 | Updated index.html to include style.css (HEAD -> master, style) [ledingto]
+* 779412c 2016-06-22 | Hello uses style.css [ledingto]
+* 8cf6c30 2016-06-22 | Added css stylesheet [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:hello Lolo$ cd ..
+MacBook-Pro-7:git_tutorial Lolo$ ls
+files	hello	work
+MacBook-Pro-7:git_tutorial Lolo$ pwd
+/Users/Lolo/Desktop/git_tutorial
+MacBook-Pro-7:git_tutorial Lolo$ ls
+files	hello	work
+MacBook-Pro-7:git_tutorial Lolo$ cd files/
+MacBook-Pro-7:files Lolo$ ls
+lab_03	lab_05	lab_10	lab_20	lab_24	lab_25	lab_30	lab_35	lab_45	lab_50
+MacBook-Pro-7:files Lolo$ open lab_03
+MacBook-Pro-7:files Lolo$ git type lab_03
+fatal: Not a valid object name lab_03
+MacBook-Pro-7:files Lolo$ type lab_03
+-bash: type: lab_03: not found
+MacBook-Pro-7:files Lolo$ cd ..
+MacBook-Pro-7:git_tutorial Lolo$ ls
+files	hello	work
+MacBook-Pro-7:git_tutorial Lolo$ git clone hello cloned_hello
+Cloning into 'cloned_hello'...
+done.
+MacBook-Pro-7:git_tutorial Lolo$ ls
+cloned_hello	files		hello		work
+MacBook-Pro-7:git_tutorial Lolo$ cd cloned_hello/
+MacBook-Pro-7:cloned_hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:cloned_hello Lolo$ open README.txt 
+MacBook-Pro-7:cloned_hello Lolo$ git hist --all
+* af91228 2016-06-22 | Updated index.html to include style.css (HEAD -> master, origin/style, origin/master, origin/HEAD) [ledingto]
+* 779412c 2016-06-22 | Hello uses style.css [ledingto]
+* 8cf6c30 2016-06-22 | Added css stylesheet [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:cloned_hello Lolo$ git remote
+origin
+MacBook-Pro-7:cloned_hello Lolo$ git remote show origin
+* remote origin
+  Fetch URL: /Users/Lolo/Desktop/git_tutorial/hello
+  Push  URL: /Users/Lolo/Desktop/git_tutorial/hello
+  HEAD branch: master
+  Remote branches:
+    master tracked
+    style  tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+MacBook-Pro-7:cloned_hello Lolo$ git branch
+* master
+MacBook-Pro-7:cloned_hello Lolo$ git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+  origin/style
+MacBook-Pro-7:cloned_hello Lolo$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/style
+MacBook-Pro-7:cloned_hello Lolo$ cd ../hello/
+MacBook-Pro-7:hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:hello Lolo$ open README.txt 
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add .
+MacBook-Pro-7:hello Lolo$ git ci -m "Changed README in original repo"
+[master f76fb67] Changed README in original repo
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ cd ../cloned_hello/
+MacBook-Pro-7:cloned_hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:cloned_hello Lolo$ open README.txt 
+MacBook-Pro-7:cloned_hello Lolo$ git fetch origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From /Users/Lolo/Desktop/git_tutorial/hello
+ * branch            master     -> FETCH_HEAD
+   af91228..f76fb67  master     -> origin/master
+MacBook-Pro-7:cloned_hello Lolo$ git hist --all
+* f76fb67 2016-06-22 | Changed README in original repo (origin/master, origin/HEAD) [ledingto]
+* af91228 2016-06-22 | Updated index.html to include style.css (HEAD -> master, origin/style) [ledingto]
+* 779412c 2016-06-22 | Hello uses style.css [ledingto]
+* 8cf6c30 2016-06-22 | Added css stylesheet [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:cloned_hello Lolo$ cat README.txt 
+This is the Hello World example from the git tutorial.MacBook-Pro-7:cloned_hello Lolo$ git merge origin/master
+Updating af91228..f76fb67
+Fast-forward
+ README.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+MacBook-Pro-7:cloned_hello Lolo$ cat README.txt 
+This is the Hello World example from the git tutorial.
+(changed in original)MacBook-Pro-7:cloned_hello Lolo$ 
+MacBook-Pro-7:cloned_hello Lolo$ git branch --track style origin/style
+Branch style set up to track remote branch style from origin.
+MacBook-Pro-7:cloned_hello Lolo$ git branch
+* master
+  style
+MacBook-Pro-7:cloned_hello Lolo$ git branch -a
+* master
+  style
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/style
+MacBook-Pro-7:cloned_hello Lolo$ git hist --all
+* f76fb67 2016-06-22 | Changed README in original repo (HEAD -> master, origin/master, origin/HEAD) [ledingto]
+* af91228 2016-06-22 | Updated index.html to include style.css (origin/style, style) [ledingto]
+* 779412c 2016-06-22 | Hello uses style.css [ledingto]
+* 8cf6c30 2016-06-22 | Added css stylesheet [ledingto]
+* 2861347 2016-06-22 | Added README [ledingto]
+* 91c08ad 2016-06-22 | Moved index.html file to hello repo [ledingto]
+* cec4f94 2016-06-22 | Fixed RTF from TextEdit that was messing up the html --> now plain text [ledingto]
+* 08c53dd 2016-06-22 | Edit source path in index.html to debug [ledingto]
+* 640d288 2016-06-22 | Moved index.html from hello repo to lib [ledingto]
+* 3c5782d 2016-06-22 | Added index.html [ledingto]
+* d0ac072 2016-06-22 | Moved hello.html to lib [ledingto]
+* 5317199 2016-06-22 | Add an author/email comment [ledingto]
+* 480f655 2016-06-22 | Added HTML header (tag: v1) [ledingto]
+* 1bab465 2016-06-22 | Added standard HTML page tags (tag: v1-beta) [ledingto]
+* c7d830b 2016-06-22 | Added h1 tag [ledingto]
+* 3df9309 2016-06-22 | First Commit [ledingto]
+MacBook-Pro-7:cloned_hello Lolo$ git hist --max-count=2
+* f76fb67 2016-06-22 | Changed README in original repo (HEAD -> master, origin/master, origin/HEAD) [ledingto]
+* af91228 2016-06-22 | Updated index.html to include style.css (origin/style, style) [ledingto]
+MacBook-Pro-7:cloned_hello Lolo$ cd ..
+MacBook-Pro-7:git_tutorial Lolo$ git clone --bare hello hello.git
+Cloning into bare repository 'hello.git'...
+done.
+MacBook-Pro-7:git_tutorial Lolo$ ls
+cloned_hello	files		hello		hello.git	work
+MacBook-Pro-7:git_tutorial Lolo$ cd hello.git/
+MacBook-Pro-7:hello.git Lolo$ ls
+HEAD		config		hooks		objects		refs
+branches	description	info		packed-refs
+MacBook-Pro-7:hello.git Lolo$ ls HEAD
+HEAD
+MacBook-Pro-7:hello.git Lolo$ cd ../hello
+MacBook-Pro-7:hello Lolo$ git remote add shared ../hello.git
+MacBook-Pro-7:hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:hello Lolo$ cd ..
+MacBook-Pro-7:git_tutorial Lolo$ ls
+cloned_hello	files		hello		hello.git	work
+MacBook-Pro-7:git_tutorial Lolo$ cd hello
+MacBook-Pro-7:hello Lolo$ open README.txt 
+MacBook-Pro-7:hello Lolo$ git co master
+M	README.txt
+Already on 'master'
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Pro-7:hello Lolo$ git add README.txt 
+MacBook-Pro-7:hello Lolo$ git ci -m "Added shared comment to README"
+[master a6fefd8] Added shared comment to README
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+MacBook-Pro-7:hello Lolo$ git st
+On branch master
+nothing to commit, working directory clean
+MacBook-Pro-7:hello Lolo$ git push shared master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 372 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To ../hello.git
+   f76fb67..a6fefd8  master -> master
+MacBook-Pro-7:hello Lolo$ cd ../cloned_hello/
+MacBook-Pro-7:cloned_hello Lolo$ git remote add shared ../hello.git
+MacBook-Pro-7:cloned_hello Lolo$ git branch --track shared master
+Branch shared set up to track local branch master.
+MacBook-Pro-7:cloned_hello Lolo$ ls
+README.txt	index.html	lib
+MacBook-Pro-7:cloned_hello Lolo$ git branch
+* master
+  shared
+  style
+MacBook-Pro-7:cloned_hello Lolo$ git branch -a
+* master
+  shared
+  style
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/style
+MacBook-Pro-7:cloned_hello Lolo$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From /Users/Lolo/Desktop/git_tutorial/hello
+   f76fb67..a6fefd8  master     -> origin/master
+Updating f76fb67..a6fefd8
+Fast-forward
+ README.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+MacBook-Pro-7:cloned_hello Lolo$ cat README.txt 
+This is the Hello World example from the git tutorial.
+(changed in original and pushed to shared)MacBook-Pro-7:cloned_hello Lolo$ 
+MacBook-Pro-7:cloned_hello Lolo$ 
