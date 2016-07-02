@@ -12,12 +12,16 @@
 */
 
 Route::get('/', array(
-  'uses' => 'Controller@index',
+  'uses' => 'UserController@index',
   'as' => 'createUser'
 ));
-/*
+
 Route::post('/', array(
-  'uses' => 'Controller@createUser',
+  'uses' => 'UserController@createUser',
   'as' => 'createUser'
 ));
-*/
+
+Route::get('/userSuccess', array(
+  'uses' => 'UserController@userSuccess',
+  'as' => 'userSuccess'
+));
