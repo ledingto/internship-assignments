@@ -11,17 +11,23 @@
 |
 */
 
-Route::get('/', array(
-  'uses' => 'UserController@index',
-  'as' => 'createUser'
-));
+Route::get(
+    '/', array(
+    'uses' => 'UserController@index',
+    'as' => 'createUser'
+    )
+);
 
-Route::post('/', array(
-  'uses' => 'UserController@createUser',
-  'as' => 'createUser'
-));
+Route::post(
+    '/', array(
+    'uses' => 'UserController@createUser',
+    'as' => 'createUser'
+    )
+);
 
-Route::get('/userSuccess', array(
-  'uses' => 'UserController@userSuccess',
-  'as' => 'userSuccess'
-));
+Route::get(
+    '/userSuccess', array(
+    'uses' => 'UserController@userSuccess',
+    'as' => 'userSuccess'
+    )
+);

@@ -51,7 +51,7 @@
             <div class="form-group">
               <input name="email" class="form-control" type="text" placeholder="Email" />
             </div>
-            <input type="submit" class="btn btn-primary" />
+            <input type="submit" value="Register" class="btn btn-primary" />
           </form>
         </div>
     </body>
