@@ -5,3 +5,4 @@ Feature:
   Scenario: Root Test
     Given I am on the homepage
     Then I should see "Whoops, looks like something went wrong."
+    Then print current URL
