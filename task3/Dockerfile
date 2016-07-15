@@ -1,5 +1,8 @@
+# base image
+# includes ubuntu and ssh server
 FROM phusion/baseimage:0.9.9
 
+# environment variable
 ENV \
   APP_DIR="/app" \
   APP_PORT="8000"
@@ -33,8 +36,9 @@ ADD config/database.php /var/www/config/database.php
 # EXPOSE THE PORT
 EXPOSE 8000
 
-RUN cd /var/www/
-CMD php artisan serve --host=0.0.0.0 --port=$APP_PORT
+RUN which php
+RUN cd /var/www/app/
+CMD php artisan serve --host=0.0.0.0 --port=$APP_PORT &
 
 
 # ideas: https://gist.github.com/briceburg/fd875a6e4e339fe48607
