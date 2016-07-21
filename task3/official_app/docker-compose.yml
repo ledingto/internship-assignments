@@ -1,0 +1,4 @@
+composer:
+  image: dylanlindgren/docker-laravel-composer
+  ports:
+    - 8080:80
