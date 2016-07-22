@@ -1,0 +1,76 @@
+// Chapter 4 Exercises
+
+// The Sum of a Range
+function range(start, end, step) {
+  	var arr = [];
+ 	if (step==undefined) { step = 1; }
+  	if (start<=end && step>0) {
+      while (start<=end) { arr.push(start); start+=step; }
+    }
+  	else if (start>=end && step<0) {
+      while (start>=end) { arr.push(start); start+=step; }
+    }
+  	else { return "Invalid range."; }
+  	return arr;
+}
+
+function sum(arr) {
+  	var sum = 0;
+	for (x=0; x<arr.length; x++) { 
+      	sum += arr[x];
+    }
+  	return sum;
+}
+
+
+// Reversing an Array
+function reverseArray(arr) {
+ 	var new_array = [];
+  	for (x=arr.length-1; x>=0; x--) {
+    	new_array.push(arr[x]);
+    }
+  	return new_array;
+}
+
+function reverseArrayInPlace(arr) {
+ 	var temp;
+  	for (x=0; x<arr.length/2; x++) {
+    	temp = arr[arr.length-1-x];
+      	arr[arr.length-1-x] = arr[x];
+      	arr[x] = temp;
+    }
+  	return arr;
+}
+
+
+// A List
+
+function arrayToList(array) {
+  	var list = {value: array[array.length-1], rest: null};
+  
+  	for (x=array.length-2; x>=0; x--) {
+     	val = array[x];
+      	rst = list;
+      	list = {value: val, rest: rst};
+    }
+  	return list;
+}
+
+function listToArray(list) {
+ 	array = [];
+  	while (list != null) {
+     	array.push(list.value);
+      	list = list.rest;
+    }
+  	return array;
+}
+
+function prepend(el, list) {
+ 	new_list = {value: el, rest: list};
+  	return new_list;
+}
+
+function nth(list, index) {
+ 	 array = listToArray(list);
+  	 return array[index];
+}

@@ -1,0 +1,31 @@
+// Chapter 2 Exercises
+
+// Looping triangle
+var hash = "";
+for (x=0; x<7; x++) {
+ 	hash += "#";
+  	console.log(hash);
+}
+
+// FizzBuzz
+for (x=1; x<=100; x++) {
+ 	if (x%3==0 && x%5==0) { console.log("FizzBuzz"); }
+  	else if (x%3==0) { console.log("Fizz"); }
+  	else if (x%5==0) { console.log("Buzz"); }
+  	else { console.log(x); }
+}
+
+// Chess Board
+var size = 8;
+var chessboard = "";
+for (x=0; x<size; x++) {
+  	// exception case
+  	if (size==1) { chessboard += " "; break; }
+  	// else
+ 	for (y=0; y<size/2; y++) {
+     	if (x%2==0) { chessboard += " #"; }
+      	else { chessboard += "# "; }
+    }
+  	chessboard += "\n";
+}
+console.log(chessboard);
