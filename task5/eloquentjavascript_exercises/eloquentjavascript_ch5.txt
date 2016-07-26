@@ -1,0 +1,11 @@
+// Chapter 5 Exercises
+
+// Flattening
+
+function flatten(arr) {
+  	var new_array = [];
+ 	for (x=0; x<arr.length; x++) { 
+      for (y=0; y<arr[x].length; y++) { new_array.push(arr[x][y]); }
+    }
+  	return new_array;
+}
