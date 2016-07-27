@@ -32,26 +32,29 @@
       </div>
 
       <!-- NEW USER FORM =============================================== -->
-      <form ng-submit="submitUser()"> <!-- ng-submit will disable the default form action and use our function -->
+      <form novalidate name="myForm" ng-submit="submitUser()"> <!-- ng-submit will disable the default form action and use our function -->
 
           <!-- NAME -->
           <div class="form-group">
-              <input type="text" class="form-control input-sm" name="name" ng-model="userData.name" placeholder="Name">
+              Name:
+              <input type="text" class="form-control input-sm" name="name" ng-model="userData.name" ng-pattern="/^[a-zA-Z ]*$/" required>
           </div>
 
           <!-- EMAIL -->
           <div class="form-group">
-              <input type="text" class="form-control input-sm" name="email" ng-model="userData.email" placeholder="Email">
+              Email:
+              <input type="text" class="form-control input-sm" name="email" ng-model="userData.email" ng-pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/" required>
           </div>
 
           <!-- PHONE -->
           <div class="form-group">
-              <input type="text" class="form-control input-sm" name="phone" ng-model="userData.phone" placeholder="Phone Number">
+              Phone Number:
+              <input type="text" class="form-control input-sm" name="phone" ng-model="userData.phone" ng-pattern="/^[0-9]{10}$/" required>
           </div>
 
           <!-- SUBMIT BUTTON -->
           <div class="form-group text-right">
-              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              <button type="submit" class="btn btn-primary btn-lg" ng-model="button" ng-disabled="myForm.$valid==false">Submit</button>
           </div>
       </form>
     </div>
