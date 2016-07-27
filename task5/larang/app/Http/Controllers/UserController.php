@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent;
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Response;
+use Input;
 
 class UserController extends Controller
 {
@@ -15,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Response::json(Comment::get());
+        return Response::json(User::get());
     }
 
     /**
@@ -25,12 +30,14 @@ class UserController extends Controller
      */
     public function store()
     {
-        Comment::create(array(
-            'name' => Input::get('name'),
-            'email' => Input::get('email'),
-            'phone' => Input::get('phone')
+        User::create(array(
+            'name' => Request::get('name'),
+            'email' => Request::get('email'),
+            'phone' => Request::get('phone')
         ));
 
         return Response::json(array('success' => true));
     }
+
+
 }
