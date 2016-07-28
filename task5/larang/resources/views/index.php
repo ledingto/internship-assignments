@@ -32,28 +32,32 @@
       </div>
 
       <!-- NEW USER FORM =============================================== -->
-      <form novalidate name="myForm" ng-submit="submitUser()"> <!-- ng-submit will disable the default form action and use our function -->
+      <form name="myForm" ng-submit="submitUser()" novalidate> <!-- ng-submit will disable the default form action and use our function -->
 
           <!-- NAME -->
           <div class="form-group">
               Name:
               <input type="text" class="form-control input-sm" name="name" ng-model="userData.name" ng-pattern="/^[a-zA-Z ]*$/" required>
+              <p ng-show="myForm.name.$invalid" class="help-block">Name is required. Letters and whitespaces only.</p>
           </div>
 
           <!-- EMAIL -->
           <div class="form-group">
               Email:
-              <input type="text" class="form-control input-sm" name="email" ng-model="userData.email" ng-pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/" required>
+              <input type="email" class="form-control input-sm" name="email" ng-model="userData.email" ng-pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/" required>
+              <p ng-show="myForm.email.$invalid" class="help-block">Email is required. Format: example@email.com</p>
           </div>
 
           <!-- PHONE -->
           <div class="form-group">
-              Phone Number:
-              <input type="text" class="form-control input-sm" name="phone" ng-model="userData.phone" ng-pattern="/^[0-9]{10}$/" required>
+              Phone Number (10 digits, no spaces or dashes):
+              <input type="tel" class="form-control input-sm" name="phone" ng-model="userData.phone" ng-pattern="/^[0-9]{10}$/" required>
+              <p ng-show="myForm.phone.$invalid" class="help-block">Phone number is required. Format: 3337770000</p>
           </div>
 
           <!-- SUBMIT BUTTON -->
-          <div class="form-group text-right">
+          <div class="form-group text-center">
+              </br>
               <button type="submit" class="btn btn-primary btn-lg" ng-model="button" ng-disabled="myForm.$valid==false">Submit</button>
           </div>
       </form>
