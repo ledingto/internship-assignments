@@ -58,14 +58,14 @@
           <!-- SUBMIT BUTTON -->
           <div class="form-group text-center">
               </br>
-              <button type="submit" class="btn btn-primary btn-lg" ng-model="button" ng-disabled="myForm.$valid==false">Submit</button>
+              <button type="submit" id="btn" class="btn btn-primary btn-lg" ng-model="button" ng-disabled="myForm.$valid==false">Submit</button>
           </div>
       </form>
     </div>
 
     <!-- Thank you message. Only show if form submitted successfully -->
-    <div class="redirect" ng-hide="!submitSuccess">
-        <h3>Thank You</h3>
+    <div ng-hide="!submitSuccess">
+        <h3 id="thankyou">Thank You</h3>
         <p>Your information has been successfully registered.</p>
     </div>
 
